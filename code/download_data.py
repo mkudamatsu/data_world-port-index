@@ -30,6 +30,12 @@ def main():
         outdir = "../orig/"
         # uncompress_zip(input_zip, outdir)
 
+        print "Download documentation"
+        url_doc = "https://msi.nga.mil/MSISiteContent/StaticFiles/NAV_PUBS/WPI/Pub150bk.pdf"
+            # Linked from https://msi.nga.mil/NGAPortal/MSI.portal?_nfpb=true&_pageLabel=msi_portal_page_62&pubCode=0015
+        downloaded_pdf = "../docs/" + "Pub150bk.pdf"
+        # download_data(url_doc, downloaded_pdf) # DOES NOT WORK probably because this website has an invalid certificate for security
+
         print "Deleting the temporary file directory"
         tempdir = "../temp/"
         for file in os.listdir(tempdir):
