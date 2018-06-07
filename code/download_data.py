@@ -1,4 +1,7 @@
-# takes 379 seconds
+# NOTE
+# Data download is commented out as the source URL is not secure
+# Manually download the two files and then run this script to unzip it.
+
 print "Setting the working directory"
 import os
 work_dir = os.path.dirname(os.path.realpath(__file__)) # This method returns the directry path of this script.
@@ -18,8 +21,7 @@ if not os.path.isdir("../docs/"): # Create the temporary file directory if it do
 def main():
     try:
         # Setting input and output
-        url = "http://msi.nga.mil/MSISiteContent/StaticFiles/NAV_PUBS/WPI/WPI_Shapefile.zip"
-            # Linked from https://msi.nga.mil/NGAPortal/MSI.portal?_nfpb=true&_pageLabel=msi_portal_page_62&pubCode=0015
+        url = "http://msi.nga.mil/MSISiteContent/StaticFiles/NAV_PUBS/WPI/WPI_Shapefile.zip" # Linked from https://msi.nga.mil/NGAPortal/MSI.portal?_nfpb=true&_pageLabel=msi_portal_page_62&pubCode=0015
         downloaded_zip = "../temp/" + "WPI_Shapefile.zip"
         # Process
         # download_data(url, downloaded_zip) # DOES NOT WORK probably because this website has an invalid certificate for security
@@ -28,7 +30,7 @@ def main():
         # Setting input and output
         input_zip = downloaded_zip
         outdir = "../orig/"
-        # uncompress_zip(input_zip, outdir)
+        uncompress_zip(input_zip, outdir)
 
         print "Download documentation"
         url_doc = "https://msi.nga.mil/MSISiteContent/StaticFiles/NAV_PUBS/WPI/Pub150bk.pdf"
